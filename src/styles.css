@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* nitido: cool paper, ink, violet for actions; diff colors carry meaning. */
+:root {
+  --bg: #f3f5f7;
+  --panel: #ffffff;
+  --ink: #15181d;
+  --muted: #5d6573;
+  --line: #dde2e8;
+  --accent: #5b3df5;
+  --on-accent: #ffffff;
+  --accent-soft: #ece8ff;
+  --error: #c4182f;
+  --error-soft: #fde8ea;
+  --added: #1a7f4b;
+  --added-soft: #e3f5ea;
+  --removed: #c4182f;
+  --removed-soft: #fde8ea;
+  --changed: #9a5b00;
+  --changed-soft: #fff1d6;
+  --tok-key: #5b3df5;
+  --tok-string: #1a7f4b;
+  --tok-number: #b4400f;
+  --tok-literal: #9a2fb0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101318;
+    --panel: #171b22;
+    --ink: #e7eaf0;
+    --muted: #9aa3b2;
+    --line: #2a303b;
+    --accent: #9d8bff;
+    --on-accent: #120f26;
+    --accent-soft: #241f45;
+    --error: #ff7b8a;
+    --error-soft: #3a1820;
+    --added: #5fd39a;
+    --added-soft: #14301f;
+    --removed: #ff7b8a;
+    --removed-soft: #3a1820;
+    --changed: #f2b84b;
+    --changed-soft: #3a2c10;
+    --tok-key: #b3a6ff;
+    --tok-string: #7fdcaa;
+    --tok-number: #ffb07a;
+    --tok-literal: #e09cf0;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+  --color-added: var(--added);
+  --color-added-soft: var(--added-soft);
+  --color-removed: var(--removed);
+  --color-removed-soft: var(--removed-soft);
+  --color-changed: var(--changed);
+  --color-changed-soft: var(--changed-soft);
+  --font-sans: "Onest Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible:not(textarea) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Editors share one metric so the gutter, the highlight and the text stay aligned. */
+.code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 22px;
+  tab-size: 2;
+}
+
+.tok-key { color: var(--tok-key); }
+.tok-string { color: var(--tok-string); }
+.tok-number { color: var(--tok-number); }
+.tok-literal { color: var(--tok-literal); }
+.tok-punct { color: var(--muted); }
